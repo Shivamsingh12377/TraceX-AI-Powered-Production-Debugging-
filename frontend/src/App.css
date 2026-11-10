@@ -1,0 +1,423 @@
+
+/* ==========================================
+   TRACEX PROFESSIONAL SIDEBAR
+   STEP 14.1
+========================================== */
+
+.tracex-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #f6f7fb;
+  font-family: inherit;
+}
+
+.tracex-layout * {
+  box-sizing: border-box;
+}
+
+/* SIDEBAR */
+
+.tracex-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 258px;
+  background: linear-gradient(
+    180deg,
+    #171b30 0%,
+    #111827 100%
+  );
+  color: #ffffff;
+  box-shadow: 6px 0 24px rgba(15, 23, 42, 0.08);
+}
+
+/* BRAND */
+
+.tracex-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 96px;
+  padding: 22px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tracex-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: linear-gradient(
+    135deg,
+    #8b5cf6,
+    #5b21b6
+  );
+  color: #fff;
+  font-size: 27px;
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.3);
+}
+
+.tracex-brand-text h2 {
+  margin: 0 0 4px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.tracex-brand-text span {
+  color: #8f9bb7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.tracex-sidebar-close {
+  display: none;
+}
+
+/* NAVIGATION */
+
+.tracex-sidebar-content {
+  flex: 1;
+  padding: 30px 14px 20px;
+  overflow-y: auto;
+}
+
+.tracex-menu-heading {
+  margin: 0 12px 16px;
+  color: #7f8ba8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.tracex-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tracex-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  color: #b5bed3;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tracex-nav-item:hover {
+  background: rgba(139, 92, 246, 0.12);
+  color: #ffffff;
+}
+
+.tracex-nav-item.active {
+  border-color: rgba(196, 181, 253, 0.2);
+  background: linear-gradient(
+    90deg,
+    #6d28d9,
+    #4f46e5
+  );
+  color: #ffffff;
+  box-shadow: 0 5px 18px rgba(109, 40, 217, 0.22);
+}
+
+.tracex-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  font-size: 19px;
+}
+
+.tracex-nav-label {
+  flex: 1;
+}
+
+.tracex-active-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* BOTTOM */
+
+.tracex-sidebar-bottom {
+  padding: 16px 14px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tracex-user-card {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tracex-user-avatar,
+.tracex-topbar-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #7c3aed;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.tracex-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.tracex-user-info strong {
+  overflow: hidden;
+  color: #f8fafc;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tracex-user-info span {
+  overflow: hidden;
+  color: #94a3b8;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tracex-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid rgba(248, 113, 113, 0.12);
+  border-radius: 11px;
+  background: rgba(220, 38, 38, 0.09);
+  color: #fca5a5;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tracex-logout-btn:hover {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+/* MAIN AREA */
+
+.tracex-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: 258px;
+}
+
+/* TOPBAR */
+
+.tracex-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 78px;
+  padding: 16px 30px;
+  border-bottom: 1px solid #e9eaf0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.tracex-topbar-left,
+.tracex-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tracex-topbar-eyebrow {
+  display: block;
+  margin-bottom: 4px;
+  color: #8b5cf6;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.tracex-topbar h1 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.tracex-welcome {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tracex-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e9d5ff;
+  border-radius: 10px;
+  background: #faf5ff;
+  color: #6d28d9;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.tracex-page-content {
+  width: 100%;
+  min-height: calc(100vh - 78px);
+  padding: 0;
+}
+
+/* OVERLAY */
+
+.tracex-sidebar-overlay {
+  display: none;
+}
+
+/* TABLET / MOBILE */
+
+@media (max-width: 900px) {
+  .tracex-sidebar {
+    width: 258px;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .tracex-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .tracex-main {
+    margin-left: 0;
+  }
+
+  .tracex-menu-toggle {
+    display: flex;
+  }
+
+  .tracex-sidebar-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+    border: 0;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .tracex-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: rgba(15, 23, 42, 0.55);
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 600px) {
+  .tracex-topbar {
+    min-height: 70px;
+    padding: 12px 16px;
+  }
+
+  .tracex-topbar h1 {
+    font-size: 17px;
+  }
+
+  .tracex-topbar-eyebrow {
+    font-size: 9px;
+  }
+
+  .tracex-welcome {
+    display: none;
+  }
+
+  .tracex-topbar-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .tracex-page-content {
+    min-height: calc(100vh - 70px);
+  }
+}
+/* TEMPORARY CSS TEST */
+.tracex-layout {
+  background: #ff0000 !important;
+}
+
+.tracex-sidebar {
+  background: #111827 !important;
+  color: white !important;
+}
+
+/* TraceX Dashboard - Clean Professional Background */
+
+.tracex-main {
+  background: #f6f7fc !important;
+}
+
+.tracex-page-content {
+  background: #f6f7fc !important;
+  min-height: calc(100vh - 78px);
+}
+
+/* Override any inherited red background */
+.tracex-page-content > * {
+  background-color: #f6f7fc;
+}

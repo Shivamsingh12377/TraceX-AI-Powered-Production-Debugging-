@@ -1,0 +1,774 @@
+
+/* ==========================================
+   TRACEX - REPORTS & ANALYTICS
+   STEP 6.4 - COMPLETE STYLESHEET
+   Includes PDF & CSV Export Buttons
+========================================== */
+
+/* ==========================================
+   MAIN PAGE
+========================================== */
+
+.reports-page {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 8px 0 40px;
+  color: #0f172a;
+  box-sizing: border-box;
+}
+
+.reports-page *,
+.reports-page *::before,
+.reports-page *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   PAGE HEADER
+========================================== */
+
+.reports-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.reports-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #6366f1;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.reports-header h1 {
+  margin: 0 0 10px;
+  color: #0f172a;
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.reports-header p {
+  max-width: 650px;
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   REFRESH BUTTON
+========================================== */
+
+.reports-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reports-refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.reports-refresh-btn:hover:not(:disabled) {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.reports-refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reports-refresh-btn:focus-visible,
+.reports-filter-btn:focus-visible,
+.reports-export-btn:focus-visible,
+.reports-error button:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   TIME PERIOD FILTER
+========================================== */
+
+.reports-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 20px 24px;
+  margin-bottom: 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+.reports-filter-bar strong {
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.reports-filter-bar p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.reports-filter-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.reports-filter-btn {
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #475569;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reports-filter-btn:hover:not(.active) {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  color: #4338ca;
+}
+
+.reports-filter-btn.active {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.18);
+}
+
+/* ==========================================
+   STEP 6.4 - EXPORT PDF & CSV BUTTONS
+========================================== */
+
+.reports-export-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reports-export-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.reports-export-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.reports-export-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* CSV Button - Green */
+
+.reports-export-btn.csv {
+  background: #059669;
+}
+
+.reports-export-btn.csv:hover:not(:disabled) {
+  background: #047857;
+}
+
+/* PDF Button - Red */
+
+.reports-export-btn.pdf {
+  background: #dc2626;
+}
+
+.reports-export-btn.pdf:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+/* ==========================================
+   SELECTED PERIOD INFORMATION
+========================================== */
+
+.reports-period-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.reports-period-info strong {
+  color: #334155;
+}
+
+/* ==========================================
+   STATISTICS CARDS
+========================================== */
+
+.reports-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.reports-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.reports-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.reports-stat-card > div:last-child {
+  min-width: 0;
+}
+
+.reports-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 24px;
+}
+
+.reports-stat-icon.purple {
+  background: #eef2ff;
+}
+
+.reports-stat-icon.red {
+  background: #fef2f2;
+}
+
+.reports-stat-icon.orange {
+  background: #fff7ed;
+}
+
+.reports-stat-icon.green {
+  background: #ecfdf5;
+}
+
+.reports-stat-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.reports-stat-card strong {
+  display: block;
+  color: #0f172a;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.reports-stat-card small {
+  display: block;
+  margin-top: 5px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* ==========================================
+   REPORT SECTIONS / CHART CARDS
+========================================== */
+
+.reports-section {
+  min-width: 0;
+  padding: 24px;
+  margin-bottom: 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+.reports-section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.reports-section-heading h2 {
+  margin: 0 0 7px;
+  color: #0f172a;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.reports-section-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   RESOLUTION OVERVIEW
+========================================== */
+
+.reports-rate {
+  color: #059669;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.reports-progress {
+  width: 100%;
+  height: 14px;
+  margin: 18px 0 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.reports-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #10b981
+  );
+  transition: width 0.3s ease;
+}
+
+.reports-progress-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   CHART GRID
+========================================== */
+
+.reports-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.reports-chart-container {
+  width: 100%;
+  height: 320px;
+  min-width: 0;
+}
+
+.reports-chart-wide {
+  height: 350px;
+}
+
+/* ==========================================
+   RECHARTS SUPPORT
+========================================== */
+
+.reports-chart-container .recharts-wrapper {
+  outline: none;
+}
+
+.reports-chart-container .recharts-cartesian-axis-tick-value {
+  font-family: inherit;
+}
+
+.reports-chart-container .recharts-legend-item-text {
+  color: #475569 !important;
+  font-size: 12px;
+}
+
+/* ==========================================
+   CHART EMPTY STATE
+========================================== */
+
+.reports-chart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 280px;
+  padding: 20px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.reports-chart-empty span {
+  font-size: 38px;
+}
+
+.reports-chart-empty p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   CUSTOM CHART TOOLTIP
+========================================== */
+
+.reports-custom-tooltip {
+  padding: 12px 15px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+.reports-custom-tooltip strong {
+  display: block;
+  color: #0f172a;
+  font-size: 13px;
+}
+
+.reports-custom-tooltip p {
+  margin: 6px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ==========================================
+   SEVERITY BREAKDOWN
+========================================== */
+
+.reports-severity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.reports-severity-row {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) 110px;
+  align-items: center;
+  gap: 16px;
+}
+
+.reports-severity-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.reports-severity-label strong {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.reports-severity-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.reports-severity-track {
+  width: 100%;
+  height: 11px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #f1f5f9;
+}
+
+.reports-severity-track div {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.reports-severity-value {
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   LOADING STATE
+========================================== */
+
+.reports-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  gap: 15px;
+  color: #64748b;
+  font-size: 14px;
+  text-align: center;
+}
+
+.reports-loading p {
+  margin: 0;
+}
+
+.reports-spinner {
+  width: 34px;
+  height: 34px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: reports-spin 0.8s linear infinite;
+}
+
+@keyframes reports-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   ERROR STATE
+========================================== */
+
+.reports-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.reports-error button {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #dc2626;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reports-error button:hover {
+  background: #b91c1c;
+}
+
+/* ==========================================
+   RESPONSIVE - LARGE TABLETS
+========================================== */
+
+@media (max-width: 1200px) {
+  .reports-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - TABLETS
+========================================== */
+
+@media (max-width: 850px) {
+  .reports-charts-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .reports-chart-container {
+    height: 310px;
+  }
+
+  .reports-chart-wide {
+    height: 340px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .reports-page {
+    padding-bottom: 24px;
+  }
+
+  .reports-header {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .reports-header h1 {
+    font-size: 25px;
+  }
+
+  .reports-header-actions {
+    width: 100%;
+  }
+
+  .reports-refresh-btn {
+    width: 100%;
+  }
+
+  .reports-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .reports-stat-card,
+  .reports-section,
+  .reports-filter-bar {
+    padding: 18px;
+  }
+
+  .reports-filter-buttons {
+    width: 100%;
+  }
+
+  .reports-filter-btn {
+    flex: 1;
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  /* EXPORT BUTTONS - MOBILE */
+
+  .reports-export-actions {
+    width: 100%;
+  }
+
+  .reports-export-btn {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .reports-section-heading h2 {
+    font-size: 17px;
+  }
+
+  .reports-severity-row {
+    grid-template-columns: 80px minmax(0, 1fr) 85px;
+    gap: 8px;
+  }
+
+  .reports-severity-label {
+    gap: 6px;
+  }
+
+  .reports-severity-label strong {
+    font-size: 11px;
+  }
+
+  .reports-severity-value {
+    font-size: 10px;
+  }
+
+  .reports-chart-container {
+    height: 290px;
+  }
+
+  .reports-chart-wide {
+    height: 310px;
+  }
+
+  .reports-period-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .reports-progress-labels {
+    font-size: 11px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .reports-page *,
+  .reports-page *::before,
+  .reports-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

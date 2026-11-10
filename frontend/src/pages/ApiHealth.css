@@ -1,0 +1,607 @@
+
+/* ==========================================
+   TRACEX - API HEALTH & PERFORMANCE
+   STEP 8.4 - DASHBOARD STYLING
+========================================== */
+
+.api-health-page {
+  width: 100%;
+  min-width: 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 4px 0 36px;
+  color: #172033;
+  animation: apiHealthFadeIn 0.35s ease;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.api-health-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.api-health-header h2 {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 2.5vw, 29px);
+  font-weight: 750;
+  letter-spacing: -0.7px;
+  color: #172033;
+}
+
+.api-health-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   FILTER AND REFRESH ACTIONS
+========================================== */
+
+.api-health-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.api-health-actions select,
+.api-health-actions button {
+  min-height: 43px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.api-health-actions select {
+  min-width: 150px;
+  padding: 0 36px 0 14px;
+  color: #334155;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.api-health-actions select:hover {
+  border-color: #a5b4fc;
+}
+
+.api-health-actions select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.api-health-actions button {
+  padding: 0 19px;
+  color: #ffffff;
+  background: #4f46e5;
+  border: 1px solid #4f46e5;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.14);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.api-health-actions button:hover:not(:disabled) {
+  background: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.2);
+}
+
+.api-health-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   ERROR MESSAGE
+========================================== */
+
+.api-health-error {
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   STAT CARDS
+========================================== */
+
+.api-health-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.api-health-stat-card {
+  position: relative;
+  min-width: 0;
+  min-height: 165px;
+  padding: 24px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e9edf5;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.api-health-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: #c7d2fe;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.07);
+}
+
+.api-health-stat-card::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -42px;
+  right: -42px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.045);
+  pointer-events: none;
+}
+
+.api-health-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  margin-bottom: 16px;
+  background: #eef2ff;
+  border-radius: 13px;
+  font-size: 21px;
+}
+
+.api-health-stat-card:nth-child(2) .api-health-stat-icon {
+  background: #ecfdf5;
+}
+
+.api-health-stat-card:nth-child(3) .api-health-stat-icon {
+  background: #fef2f2;
+}
+
+.api-health-stat-card:nth-child(4) .api-health-stat-icon {
+  background: #eff6ff;
+}
+
+.api-health-stat-card p {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.api-health-stat-card h3 {
+  margin: 0;
+  font-size: clamp(23px, 2.3vw, 31px);
+  font-weight: 750;
+  letter-spacing: -0.8px;
+  line-height: 1.25;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   CHART CARD
+========================================== */
+
+.api-health-chart-card {
+  min-width: 0;
+  padding: 25px;
+  margin-bottom: 24px;
+  background: #ffffff;
+  border: 1px solid #e9edf5;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
+}
+
+.api-health-chart-card h3 {
+  margin: 0 0 22px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #172033;
+}
+
+.api-health-chart-card > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  margin: 0;
+  color: #94a3b8;
+  font-size: 14px;
+  text-align: center;
+}
+
+.api-health-chart {
+  width: 100%;
+  height: 340px;
+  min-width: 0;
+}
+
+/* ==========================================
+   RECHARTS TOOLTIP
+========================================== */
+
+.api-health-page .recharts-default-tooltip {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.api-health-page .recharts-cartesian-axis-tick-value {
+  fill: #94a3b8;
+  font-size: 11px;
+}
+
+/* ==========================================
+   ENDPOINT PERFORMANCE TABLE CARD
+========================================== */
+
+.api-health-table-card {
+  min-width: 0;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e9edf5;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
+}
+
+.api-health-table-card h3 {
+  margin: 0 0 22px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #172033;
+}
+
+.api-health-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #eef2f7;
+  border-radius: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.api-health-table-wrapper table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+}
+
+.api-health-table-wrapper thead {
+  background: #f8fafc;
+}
+
+.api-health-table-wrapper th {
+  padding: 16px 17px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-bottom: 1px solid #e9edf5;
+}
+
+.api-health-table-wrapper td {
+  padding: 17px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.api-health-table-wrapper tbody tr {
+  transition: background 0.2s ease;
+}
+
+.api-health-table-wrapper tbody tr:hover {
+  background: #f8faff;
+}
+
+.api-health-table-wrapper tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.api-health-table-wrapper td:nth-child(2) {
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+  font-size: 12px;
+  color: #475569;
+  overflow-wrap: anywhere;
+}
+
+.api-health-table-wrapper td[colspan] {
+  padding: 36px 16px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* ==========================================
+   HTTP METHOD BADGE
+========================================== */
+
+.api-health-method {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 54px;
+  padding: 6px 10px;
+  color: #047857;
+  background: #d1fae5;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+.api-health-actions button:focus-visible,
+.api-health-actions select:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.35);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes apiHealthFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - LAPTOP
+========================================== */
+
+@media (max-width: 1200px) {
+  .api-health-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .api-health-stat-card {
+    min-height: 150px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width: 768px) {
+  .api-health-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .api-health-actions {
+    width: 100%;
+  }
+
+  .api-health-chart-card,
+  .api-health-table-card {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .api-health-chart {
+    height: 280px;
+  }
+
+  .api-health-stat-card {
+    padding: 20px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .api-health-page {
+    padding-bottom: 22px;
+  }
+
+  .api-health-header {
+    margin-bottom: 20px;
+  }
+
+  .api-health-header h2 {
+    font-size: 22px;
+  }
+
+  .api-health-header p {
+    font-size: 13px;
+  }
+
+  .api-health-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 9px;
+  }
+
+  .api-health-actions select {
+    min-width: 0;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .api-health-actions button {
+    padding: 0 13px;
+    font-size: 12px;
+  }
+
+  .api-health-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+    margin-bottom: 17px;
+  }
+
+  .api-health-stat-card {
+    min-height: 145px;
+    padding: 15px;
+    border-radius: 14px;
+  }
+
+  .api-health-stat-icon {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 13px;
+    font-size: 18px;
+  }
+
+  .api-health-stat-card p {
+    font-size: 11px;
+  }
+
+  .api-health-stat-card h3 {
+    font-size: 21px;
+  }
+
+  .api-health-chart-card,
+  .api-health-table-card {
+    padding: 15px;
+    margin-bottom: 17px;
+    border-radius: 14px;
+  }
+
+  .api-health-chart-card h3,
+  .api-health-table-card h3 {
+    font-size: 16px;
+    margin-bottom: 17px;
+  }
+
+  .api-health-chart {
+    height: 240px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .api-health-page {
+    animation: none;
+  }
+
+  .api-health-stat-card,
+  .api-health-actions button,
+  .api-health-table-wrapper tbody tr {
+    transition: none;
+  }
+}
+
+/* ==========================================
+   STEP 8.5 - LIVE MONITORING STATUS
+========================================== */
+
+.api-health-live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.api-health-connected {
+  color: #047857;
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.api-health-disconnected {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.api-health-live-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.api-health-connected .api-health-live-dot {
+  animation: apiHealthPulse 1.8s ease-in-out infinite;
+}
+
+.api-health-last-updated {
+  margin-top: 9px !important;
+  color: #94a3b8 !important;
+  font-size: 12px !important;
+}
+
+@keyframes apiHealthPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .api-health-connected .api-health-live-dot {
+    animation: none;
+  }
+}
