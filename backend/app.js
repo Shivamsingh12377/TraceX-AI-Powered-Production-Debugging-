@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 // ROUTES IMPORT
 // ===================================
 
-const authRoutes = require("./routes/authroutes");
+const authRoutes = require("./routes/authRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 const activityRoutes = require("./routes/activityRoutes");
 
