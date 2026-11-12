@@ -10,7 +10,7 @@ import {
 import { socket } from "../socket";
 import "../styles/KanbanBoard.css";
 
-const API = "http://localhost:5000/api/tasks";
+const API = `${import.meta.env.VITE_API_URL}/api/tasks`;
 
 const columns = [
   { id: "Pending", title: "To Do", icon: "📋" },

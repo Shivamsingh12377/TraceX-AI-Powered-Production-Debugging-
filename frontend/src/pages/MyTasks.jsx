@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import "../styles/MyTasks.css";
 
-const API = "http://localhost:5000/api/tasks";
+const API = `${import.meta.env.VITE_API_URL}/api/tasks`;
 
 const CATEGORIES = [
   "General",

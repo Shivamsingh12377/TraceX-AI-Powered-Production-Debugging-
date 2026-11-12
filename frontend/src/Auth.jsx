@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Auth.css";
-
+const API_URL = import.meta.env.VITE_API_URL;
 export default function Auth({ onLogin }) {
   const [mode, setMode] = useState("login");
   const [name, setName] = useState("");
@@ -20,7 +20,7 @@ export default function Auth({ onLogin }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/auth/${mode}`,
+        `${API_URL}/api/auth/${mode}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

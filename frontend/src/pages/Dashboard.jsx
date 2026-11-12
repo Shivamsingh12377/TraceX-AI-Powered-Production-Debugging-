@@ -3,8 +3,8 @@ import { useCallback, useEffect, useState } from "react";
 import { socket } from "../socket";
 import "./Dashboard.css";
 
-const API_URL = "http://localhost:5000/api/tasks";
-const ACTIVITY_API_URL = "http://localhost:5000/api/activities";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/tasks`;
+const ACTIVITY_API_URL = `${import.meta.env.VITE_API_URL}/api/activities`;
 const ACTIVITY_PAGE_SIZE = 10;
 
 const CATEGORIES = [

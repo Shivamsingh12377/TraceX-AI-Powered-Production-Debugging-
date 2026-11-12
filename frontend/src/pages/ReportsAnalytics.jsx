@@ -23,7 +23,7 @@ import autoTable from "jspdf-autotable";
 import "./ReportsAnalytics.css";
 
 const API_URL =
-  "http://localhost:5000/api/errors/analytics";
+  `${import.meta.env.VITE_API_URL}/api/errors/analytics`;
 
 const SEVERITY_COLORS = {
   critical: "#ef4444",

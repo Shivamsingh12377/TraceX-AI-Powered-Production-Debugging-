@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./Calendar.css";
 
-const API_URL = "http://localhost:5000/api/tasks";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/tasks`;
 
 const WEEK_DAYS = [
   "Sun",
