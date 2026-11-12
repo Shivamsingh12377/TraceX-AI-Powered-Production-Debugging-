@@ -9,7 +9,7 @@ const authMiddleware = require(
   "../middleware/authmiddleware"
 );
 
-const analyzeError = require("../services/errorAnalyzer");
+const analyzeError = require("../services/erroranalyzer");
 const solveProblem = require("../services/problemSolver");
 
 const router = express.Router();
