@@ -16,12 +16,13 @@ const httpServer = http.createServer(app);
 // Socket.IO setup
 const io = new Server(httpServer, {
   cors: {
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:5174",
-      "http://127.0.0.1:5173",
-      "http://127.0.0.1:5174",
-    ],
+ origin: [
+  "http://localhost:5173",
+  "http://localhost:5174",
+  "http://127.0.0.1:5173",
+  "http://127.0.0.1:5174",
+  "https://tracex-ai-powered-production-debugging-2.onrender.com",
+],
     methods: ["GET", "POST"],
   },
 });
