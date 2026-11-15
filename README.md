@@ -1,6 +1,12 @@
 
 # TraceX – AI-Powered Production Debugging
 
+## 🚀 Live Demo
+
+**Live Website:** [Click Here to View TraceX](https://tracex-ai-powered-production-debugging-2.onrender.com)
+
+**Backend API:** [View Backend](https://tracex-ai-powered-production-debugging-1.onrender.com)
+
 TraceX is a full-stack web application designed to help developers monitor application health, track errors, manage tasks, and simplify production debugging through an organized dashboard.
 
 ## 🚀 Features
